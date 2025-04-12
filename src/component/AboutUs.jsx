@@ -23,11 +23,28 @@ const AboutUs = () => {
     <div style={styles.container}>
       <style>{cssStyles}</style>
 
+      {/* HEADER theo thiết kế mới */}
+      <nav className="main-nav">
+        <div className="logo">
+          <div className="circle-logo">A</div>
+          <span className="brand-name">ANT CENTER</span>
+        </div>
+        <ul className="menu">
+          <li>Dịch vụ</li>
+          <li>Sản phẩm</li>
+          <li className="active">Bài viết</li>
+          <li>Training</li>
+          <li>Tuyển dụng</li>
+        </ul>
+        <button className="book-button">Đặt lịch ngay</button>
+      </nav>
+
+      {/* HEADER PAGE */}
       <header className="about-header">
         <h1>Về Chúng Tôi</h1>
       </header>
 
-      {/* Phần Giới thiệu */}
+      {/* GIỚI THIỆU */}
       <section className="about-section card">
         <h2>Giới Thiệu</h2>
         <p>
@@ -41,11 +58,10 @@ const AboutUs = () => {
         </p>
       </section>
 
-      {/* Hình Ảnh & Video Giới thiệu */}
+      {/* HÌNH ẢNH + VIDEO */}
       <section className="about-section card">
         <h2>Hình Ảnh & Video Giới Thiệu</h2>
 
-        {/* Carousel ảnh */}
         <div className="carousel">
           <div
             className="slides"
@@ -63,7 +79,6 @@ const AboutUs = () => {
           </div>
         </div>
 
-        {/* Video */}
         <div className="video-container">
           <video controls>
             <source src="gioithieu.mp4" type="video/mp4" />
@@ -81,14 +96,81 @@ const styles = {
     color: '#f1f1f1',
     fontFamily: `'Segoe UI', Tahoma, Geneva, Verdana, sans-serif`,
     minHeight: '100vh',
-    padding: '30px 20px',
+    paddingBottom: '40px',
   },
 };
 
 const cssStyles = `
+  /* HEADER chính */
+  .main-nav {
+    background-color: #151820;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .circle-logo {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .brand-name {
+    color: #00e0ff;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  .menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu li {
+    color: white;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .menu li:hover, .menu .active {
+    color: #00e0ff;
+  }
+
+  .book-button {
+    background-color: #a855f7;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .book-button:hover {
+    background-color: #9333ea;
+  }
+
   .about-header {
     text-align: center;
-    padding-bottom: 20px;
+    padding: 30px 20px 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
